@@ -1,0 +1,12 @@
+{
+  "name": "js-zwzr2z",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  }
+}

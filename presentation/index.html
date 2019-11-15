@@ -1,0 +1,552 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Design Patterns</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section style="text-align: left; text-shadow: 1px 1px;" data-background="images/pattern.jpg">
+					<h2>Design patterns and principles</h2>
+					<small>
+						November 12, 2019<br />
+						Michał Gacek
+					</small>
+				</section>
+				<section>
+					<section>
+						<h2>What ?</h2>
+						<img src="images/wait-what-meme.jpg" alt="Wait, what ?" />
+					</section>
+					<section>
+						<p>
+							<u>Design patterns</u> are typical solutions to common problems
+							in software design. Each pattern is like a <em>blueprint</em>
+							that you can customize to solve a particular
+							design problem in your code.
+						</p>
+					</section>
+					<section>
+						<p>
+								“Each pattern describes a problem which occurs over and over again
+								in our environment, and then describes the core of the solution to
+								that problem, in such a way that you can use this solution a million
+								times over, without ever doing it the same way twice”
+						</p>
+						<small>- Christopher Alexander</small>
+					</section>
+					<section>
+						<h4>Pattern</h4>
+						<ul>
+							<li class="fragment">Name</li>
+							<li class="fragment">Problem description</li>
+							<li class="fragment">Solution</li>
+							<li class="fragment">Consequences</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Why we need software design patterns ?</h2>
+						<ul>
+							<li class="fragment"><em>to understand</em> the high-level design of code</li>
+							<li class="fragment"><em>to apply proven solutions</em> to common problems</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Clasification</h2>
+						<ul>
+							<li class="fragment">Creational patterns</li>
+							<li class="fragment">Structural patterns</li>
+							<li class="fragment">Behavioral patterns</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Creational patterns</h2>
+						<ul>
+							<li class="fragment">Factory method</li>
+							<li class="fragment">Abstract factory</li>
+							<li class="fragment">Builder</li>
+							<li class="fragment">Prototype</li>
+							<li class="fragment">Singleton</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Structural patterns</h2>
+						<ul>
+							<li class="fragment">Adapter</li>
+							<li class="fragment">Bridge</li>
+							<li class="fragment">Composite</li>
+							<li class="fragment">Decorator</li>
+							<li class="fragment">Facade</li>
+							<li class="fragment">Flyweight</li>
+							<li class="fragment">Proxy</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Behavioral patterns</h2>
+						<ul>
+							<li class="fragment">Chain of Responsibility</li>
+							<li class="fragment">Command</li>
+							<li class="fragment">Iterator</li>
+							<li class="fragment">Mediator</li>
+							<li class="fragment">Memento</li>
+							<li class="fragment">Observer</li>
+							<li class="fragment">State</li>
+							<li class="fragment">Strategy</li>
+							<li class="fragment">Template method</li>
+							<li class="fragment">Visitor</li>
+							<li class="fragment">Interpreter</li>
+						</ul>
+					</section>
+					<section>
+						<img src="/images/help.jpeg" alt="Help" />
+					</section>
+					<section>
+						<div class="table-custom" role="presentation">
+							<div>
+								<div class="header"></div>
+								<div class="header"></div>
+								<div class="header">
+									<div>
+										<h2>Clasification</h2>
+									</div>
+									<div class="record">
+										<div>
+											<p>Creational</p>
+										</div>
+										<div>
+											<p>Structural</p>
+										</div>
+										<div>
+											<p>Behavioral</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div>
+								<div class="main">
+									<p>Scope</p>
+								</div>
+								<div class="main">
+									<div>
+										<div>
+											<p>Class</p>
+										</div>
+										<div class="record">
+											<div>
+												<ul>
+													<li>Factory method</li>
+												</ul>
+											</div>
+											<div>
+												<ul>
+													<li>Adapter</li>
+												</ul>
+											</div>
+											<div>
+												<ul>
+													<li>Template method</li>
+													<li>Interpreter</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+					
+									<div>
+										<div>
+											<p>Object</p>
+										</div>
+										<div class="record">
+											<div>
+												<ul>
+													<li>Abstract factory</li>
+													<li>Builder</li>
+													<li>Prototype</li>
+													<li>Singleton</li>
+												</ul>
+											</div>
+											<div>
+												<ul>
+													<li>Adapter</li>
+													<li>Bridge</li>
+													<li>Composite</li>
+													<li>Decorator</li>
+													<li>Facade</li>
+													<li>Flyweight</li>
+													<li>Proxy</li>
+												</ul>
+											</div>
+											<div>
+												<ul>
+													<li>Chain of Responsibility</li>
+													<li>Command</li>
+													<li>Iterator</li>
+													<li>Mediator</li>
+													<li>Memento</li>
+													<li>Observer</li>
+													<li>State</li>
+													<li>Strategy</li>
+													<li>Visitor</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="footer">
+								<small>Source: Book "Design Patterns" - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</small>
+							</div>
+						</div>						
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Selected patterns</h2>
+					</section>
+					<section>
+						<h5>Singleton (creational patterns)</h5>
+						<p class="fragment">
+								Singleton is a creational design pattern that lets you ensure that a class has only one instance,
+								while providing a global access point to this instance.
+						</p>
+						<ul class="fragment">
+							<li>
+								<a href="https://gist.github.com/migace/15e1d7a769d72928db9832c3d2e5ccc0">
+									Example
+								</a>
+							</li>
+							<li>
+								See more: <a href="">Get example app</a>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h5>Prototype pattern (Creational patterns)</h5>
+						<p class="fragment">
+							Prototype is a creational design pattern that lets you copy existing objects
+							without making your code dependent on their classes.
+						</p>
+						<small class="fragment">
+							<a href="https://gist.github.com/migace/a03424bab6fa0b9a5e04392e185f0b85">
+								Example
+							</a>
+						</small>
+					</section>
+					<section>
+						<h5>Factory pattern (Creational patterns)</h5>
+						<p class="fragment">
+								Factory Method is a creational design pattern that provides an interface for creating
+								objects in a superclass, but allows subclasses to alter the type of objects that will
+								be created.
+						</p>
+					</section>
+					<section>
+						<h5>Observer (Behavioral patterns)</h5>
+						<p class="fragment">
+							The observer pattern is a software design pattern in which an object, called the subject,
+							maintains a list of its dependents, called observers, and notifies them automatically of
+							any state changes, usually by calling one of their methods.
+							- Wikipedia
+						</p>
+					</section>
+					<section>
+						<h5>Facade pattern (Structural patterns)</h5>
+						<p class="fragment">
+							Facade is a structural design pattern that provides a simplified interface to a library,
+							a framework, or any other complex set of classes.
+						</p>
+					</section>
+					<section>
+						<h5>Decorator pattern (Structural patterns)</h5>
+						<p class="fragment">
+							Decorator is a structural design pattern that lets you attach new behaviors
+							to objects by placing these objects inside special wrapper objects that
+							contain the behaviors.
+						</p>
+						<small class="fragment">
+							<a href="https://gist.github.com/migace/9854dc564558bd81da3c8ae76524621e">
+								Example
+							</a>
+						</small>
+					</section>
+					<section>
+						<h5>Angular</h5>
+						<div data-markdown>
+							<script type="text/template">
+								```
+								@Component({
+									selector: 'example',
+									templateUrl: './example.component.html',
+									styleUrls: ['./example.component.css']
+								})
+								export class ExampleComponent { ... }
+								```
+							</script>
+						</div>
+					</section>
+					<section>
+						<h5>React</h5>
+						<div data-markdown>
+							<script type="text/template">
+								```
+								const CommentListWithSubscription = withSubscription(
+									CommentList,
+									(DataSource) => DataSource.getComments()
+								);
+
+								const BlogPostWithSubscription = withSubscription(
+									BlogPost,
+									(DataSource, props) => DataSource.getBlogPost(props.id)
+								);
+								```
+							</script>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Principles of Functional Programming (FP)</h2>
+						<ul>
+							<li class="fragment">functions are <em>"first citizens"</em></li>
+							<li class="fragment">Immutable data structures</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Functions composition</h2>
+						<small>increase code readability</small>
+						<div class="fragment" data-markdown>
+							<script type="text/template">
+								```
+								const increment = num => num + 2
+								const decrement = num => num - 7
+								const multiply = num => num * 3
+
+								const operation = num => increment(decrement(multiply(num)))
+
+								console.log(operation(4))  // 7
+								```
+							</script>
+						</div>
+					</section>	
+					<section>
+						<h2>Functions as parameters</h2>
+						<small>increase code flexibility</small>
+						<div class="fragment" data-markdown>
+							<script type="text/template">
+								```
+								const numbers = [4, 5, 6, 7]
+								const multiplyTwo = num => num * 2
+
+								console.log(numbers.map(multiplyTwo))  // [8, 10, 12, 14]
+								```
+							</script>
+						</div>
+					</section>
+					<section>
+						<h2>Higher-order functions</h2>
+						<small>help to reuse code</small>
+						<div class="fragment" data-markdown>
+							<script type="text/template">
+								```
+								const numbers = [1, 2, 3, 4, 5]
+								const createMultiplingFunc = number => arr => 
+									arr.map(num => num * number)
+								
+								const multiplyTwo = createMultiplingFunc(2)
+
+								console.log(multiplyTwo(numbers)) // [2, 4, 6, 8, 10]
+								```
+							</script>
+						</div>
+					</section>						
+					<section>
+						<h2>Immutability</h2>
+						<small>objects mutation bug</small>
+					</section>
+					<section>
+						<h4>Mutation :(</h4>
+						<div class="fragment" data-markdown="">
+							<script type="text/template">
+								```
+								const numbers = [1, 2, 3, 4, 5]
+								const multiplyTwo = numbers => {
+									for (let i = 0; i < numbers.length; i++) {
+										numbers[i] *= 2
+									}
+
+									return numbers
+								}
+
+								console.log(multiplyTwo(numbers)) // [2, 4, 6, 8, 10]
+								console.log(numbers) // [2, 4, 6, 8, 10]
+								```
+							</script>
+						</div>
+					</section>
+					<section>
+						<h4>Create a new data :))</h4>
+						<div class="fragment" data-markdown="">
+							<script type="text/template">
+								```
+								const numbers = [1, 2, 3, 4, 5]
+								const multiplyFunc = number => numbers => numbers.map(item => item * number)
+								const multiplyTwo = multiplyFunc(2)
+
+								console.log(multiplyTwo(numbers)) // [2, 4, 6, 8, 10]
+								console.log(numbers) // [1, 2, 3, 4, 5]
+								```
+							</script>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>S.O.L.I.D principles</h2>
+						<ul>
+							<li class="fragment">Single responsibility principle</li>
+							<li class="fragment">Open-closed principle</li>
+							<li class="fragment">Liskov subsitution principle</li>
+							<li class="fragment">Interface segregation principle</li>
+							<li class="fragment">Dependency inversion principle</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Single responsibility principle</h2>
+						<p>
+							is a computer programming principle that states that every module, class, or function should have responsibility over a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class, module or function
+						</p>
+					</section>
+					<section>
+						<h2>Open-closed principle</h2>
+						<p>
+							software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification"; that is, such an entity can allow its behaviour to be extended without modifying its source code.
+						</p>
+					</section>
+					<section>
+						<h2>Liskov subsitution principle</h2>
+						<p>
+							in a computer program, if S is a subtype of T, then objects of type T may be replaced with objects of type S (i.e. an object of type T may be substituted with any object of a subtype S) without altering any of the desirable properties of the program (correctness, task performed, etc.).
+						</p>
+					</section>
+					<section>
+						<h2>Interface segregation principle</h2>
+						<p>
+							states that no client should be forced to depend on methods it does not use.[1] ISP splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them.
+						</p>
+					</section>
+					<section>
+						<h2>Dependency inversion principle</h2>
+						<ul>
+							<li>
+								High-level modules should not depend on low-level modules. Both should depend on abstractions (e.g. interfaces).									
+							</li>
+							<li>
+								Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>React ?</h2>
+						<small>design patterns</small>
+					</section>
+					<section>
+						<h2>React - patterns</h2>
+						<ul>
+							<li class="fragment">HOC</li>
+							<li class="fragment">Render Props</li>
+							<li class="fragment">Function component</li>
+							<li class="fragment">Lifting state up</li>
+							<li class="fragment">Data-Down, Actions-Up</li>
+							<li class="fragment">
+								Container/View
+								<ul>
+									<li class="fragment">Presentational / Container</li>
+									<li class="fragment">Thick / thin</li>
+									<li class="fragment">Smart / "dumb"</li>
+								</ul>
+							</li>							
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Sources</h2>
+					<ul>
+						<li>
+							<a href="https://www.serendipidata.com/posts/react-design-patterns-container-view">
+								https://www.serendipidata.com
+							</a>
+						</li>
+						<li>
+							<a href="https://www.jondjones.com/frontend/react/components/four-reactjs-design-patterns-you-need-to-be-know-about">
+								https://www.jondjones.com
+							</a>
+						</li>
+						<li>
+							<a href="https://www.slideshare.net/t.bak/design-patterns-in-react-152397149">
+								https://www.slideshare.net
+							</a>
+						</li>
+						<li>
+							<a href="https://itnext.io/using-advanced-design-patterns-to-create-flexible-and-reusable-react-components-part-3-render-d7517dfe72bc">
+								https://itnext.io
+							</a>
+						</li>
+						<li>
+							<a href="https://reactpatterns.com">
+								https://reactpatterns.com
+							</a>
+						</li>						
+						<li>
+							<a href="https://medium.com/swlh/micro-service-design-pattern-dependency-driven-decomposition-ddd-d2d28df2fedc">
+								https://medium.com/
+							</a>
+						</li>
+						<li>
+							<a href="https://refactoring.guru/">
+								https://refactoring.guru/
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<img src="images/thank-you.jpg" alt="Thank you" />
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>			
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

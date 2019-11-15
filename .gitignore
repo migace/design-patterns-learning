@@ -1,0 +1,5 @@
+examples/*/dist/
+examples/*/node_modules/
+examples/*/.cache
+examples/*/.parcel-cache/
+examples/*/.DS_Store
