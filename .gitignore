@@ -3,3 +3,4 @@ examples/*/node_modules/
 examples/*/.cache
 examples/*/.parcel-cache/
 examples/*/.DS_Store
+presentation/node_modules/
