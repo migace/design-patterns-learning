@@ -431,125 +431,120 @@
 						</ul>
 					</section>
 					<section>
-						<section>
-							<h2>Single responsibility principle</h2>
-							<p>
-								is a computer programming principle that states that every module, class, or function should have responsibility over a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class, module or function
-							</p>
-						</section>
-						<section>
-							<ul>
-								<li>
-										if you find yourself wanting to call a function loginUserAndGetGroups(), you’re probably breaking the Single Responsibility Principle. Break these functions into two separate ones.
-								</li>
-								<li>
-										Extracting
-								</li>
-								<li>
-										Reusable functions
-								</li>
-							</ul>
-						</section>
-						<section data-markdown>
-							<script type="text/javascript">
-							```
-							class Employee {
-  							public calculatePay(): number {}
-  							
-								public reportHours(): number {}
-  							
-								public save(): Promise<void> {}
-							}
-							```
-							</script>
-						</section>
-						<section data-markdown>
-							<script type="text/template">
-								```
-								class SuperHero {
-									constructor(name: string) {}
-									getHeroName() {}
-									saveHeros(a: Hero) {}
-								}
-								```
-							</script>
-						</section>
-						<section data-markdown="">
-							<script type="text/template">
-								```
-								class SuperHero {
-										constructor(name: string) {}
-										getHeroName() {}
-								}
-								
-								class SuperHeroDB {
-										getHeros(a: Hero) {}
-										saveHeros(a: Hero) {}
-								}
-								```
-							</script>
-						</section>
+						<h2>Single responsibility principle</h2>
+						<p>
+							is a computer programming principle that states that every module, class, or function should have responsibility over a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class, module or function
+						</p>
 					</section>
 					<section>
-						<section>
-							<h2>Open-closed principle</h2>
-							<p>
-								software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification"; that is, such an entity can allow its behaviour to be extended without modifying its source code.
-							</p>
-						</section>
-						<section data-markdown>
-							<script type="text/template">
-								```
-								let iceCreamFlavors = ['chocolate', 'vanilla'];
-								let iceCreamMaker = {
-									makeIceCream(flavor) {
-										if (iceCreamFlavors.indexOf(flavor) > -1) {
-											console.log('Great success. You now have ice cream.');
-										} else {
-											console.log('Epic fail. No ice cream for you.');
-										}
-									},
-								};
-								export default iceCreamMaker;
-								```
-							</script>
-						</section>
-						<section data-markdown>
-							<script type="text/template">
+						<ul>
+							<li>
+									if you find yourself wanting to call a function 
+									<pre><code class="hljs javascript" style="word-wrap: break-word;">loginUserAndGetGroups()</code></pre>you’re probably breaking the Single Responsibility Principle. Break these functions into two separate ones.
+							</li>
+							<li>
+									Extracting
+							</li>
+							<li>
+									Reusable functions
+							</li>
+						</ul>
+					</section>
+					<section data-markdown>
+						<script type="text/javascript">
+						```
+						class Employee {
+							public calculatePay(): number {}
+							
+							public reportHours(): number {}
+							
+							public save(): Promise<void> {}
+						}
+						```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
 							```
-							addFlavor(flavor) {
-								iceCreamFlavors.push(flavor);
+							class SuperHero {
+								constructor(name) {}
+								getHeroName() {}
+								saveHeros(name) {}
 							}
 							```
-							</script>
-						</section>
-						<section data-markdown>
-							<script type="text/template">
-								```
-								class SuperHero {
-									constructor(name: string) {}
-									getHeroName() { 
+						</script>
+					</section>
+					<section data-markdown="">
+						<script type="text/template">
+							```
+							class SuperHero {
+								constructor(name) {}
+								getHeroName() {}
+							}
 							
-									getWeapons(herosName) {
-										for(let index = 0; index <= herosName.length; index++) {
-											if(herosName[index].name === 'thor') {
-													console.log('storm breaker');
-											}
-											if(herosName[index].name === 'captainamerica') {
-													console.log('Shield');
-											}
-											if(herosName[index].name === 'ironman') {
-													console.log('the suit');
-											}
-										}
+							class SuperHeroDB {
+								getHeros(a) {}
+								saveHeros(a) {}
+							}
+							```
+						</script>
+					</section>
+					<section>
+						<h2>Open-closed principle</h2>
+						<p>
+							software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification"; that is, such an entity can allow its behaviour to be extended without modifying its source code.
+						</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							```
+							let iceCreamFlavors = ['chocolate', 'vanilla'];
+							let iceCreamMaker = {
+								makeIceCream(flavor) {
+									if (iceCreamFlavors.indexOf(flavor) > -1) {
+										console.log('Great success. You now have ice cream.');
+									} else {
+										console.log('Epic fail. No ice cream for you.');
+									}
+								},
+							};
+							export default iceCreamMaker;
+							```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						```
+						addFlavor(flavor) {
+							iceCreamFlavors.push(flavor);
+						}
+						```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							```
+							class SuperHero {
+								constructor(name: string) {}
+								getHeroName() { 
+						
+								getWeapons(herosName) {
+									if (herosName[index].name === 'thor') {
+											console.log('storm breaker');
+									}
+									if (herosName[index].name === 'captainamerica') {
+											console.log('Shield');
+									}
+									if (herosName[index].name === 'ironman') {
+											console.log('the suit');
 									}
 								}
-								```
-							</script>
-						</section>
-						<section>
-							<p>Example</p>
-						</section>
+							}
+							```
+						</script>
+					</section>
+					<section>
+						<p>Example</p>
 					</section>
 					<section>
 						<h2>Liskov subsitution principle</h2>
@@ -558,128 +553,124 @@
 						</p>
 					</section>
 					<section>
-						<section>
-							<h2>Interface segregation principle</h2>
-							<p>
-								states that no client should be forced to depend on methods it does not use.[1] ISP splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them.
-							</p>
-						</section>
-						<section data-markdown>
-							<script type="text/template">
-								```
-								interface Weapons {
-									stormBreaker(): any;
-									shield(): any;
-									hammer(): any;
-									suit(): any;
-								}
-								```
-							</script>
-						</section>
-						<section data-markdown>
-							<script type="text/template">
+						<h2>Interface segregation principle</h2>
+						<p>
+							states that no client should be forced to depend on methods it does not use.[1] ISP splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them.
+						</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
 							```
-							class Ironman implements Weapons {
-								stormBreaker() {}
-								Shield() {}
-								Hammer() {}
-								Suit() {}
+							interface Weapons {
+								stormBreaker(): any;
+								shield(): any;
+								hammer(): any;
+								suit(): any;
 							}
 							```
-							</script>
-						</section>
-						<section>
-							<script type="text/template">
-							```
-							interface ThorWeapon {
-									hammer();
-							}
-							interface IronmanWeapon {
-									suit();
-							}
-							interface CaptainAmericaWeapon {
-									sheild();
-							}
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						```
+						class Ironman implements Weapons {
+							stormBreaker() {}
+							Shield() {}
+							Hammer() {}
+							Suit() {}
+						}
+						```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						```
+						interface ThorWeapon {
+							hammer();
+						}
+						interface IronmanWeapon {
+							suit();
+						}
+						interface CaptainAmericaWeapon {
+							sheild();
+						}
 
-							class thor implements ThorWeapon {
-									hammer() { // code }
-							}
-							````
-							</script>
-						</section>
+						class thor implements ThorWeapon {
+							hammer() {}
+						}
+						````
+						</script>
 					</section>
 					<section>
-						<section>
-							<h2>Dependency inversion principle</h2>
-							<ul>
-								<li>
-									High-level modules should not depend on low-level modules. Both should depend on abstractions (e.g. interfaces).									
-								</li>
-								<li>
-									Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.
-								</li>
-							</ul>
-						</section>
-						<section data-markdown>
-							<script type="text/template">
-							```
-							const pool = mysql.createPool({});
+						<h2>Dependency inversion principle</h2>
+						<ul>
+							<li>
+								High-level modules should not depend on low-level modules. Both should depend on abstractions (e.g. interfaces).									
+							</li>
+							<li>
+								Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.
+							</li>
+						</ul>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						```
+						const pool = mysql.createPool({});
 
-							class SuperHero {
-								constructor(private db: pool) {}
-								saveHeroes() {
-										this.db.save();
-								}
+						class SuperHero {
+							constructor(private db: pool) {}
+							saveHeroes() {
+								this.db.save();
 							}
-							```
-							</script>
-						</section>
-						<section data-markdown>
-							<script type="text/template">
-							```
-							interface Connection {
-								mysql.createPool({})
+						}
+						```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						```
+						interface Connection {
+							mysql.createPool({})
+						}
+						
+						class SuperHero {
+							constructor(private db: Connection) {}
+							saveHeroes() {
+								this.db.save();
 							}
-							
-							class SuperHero {
-								 constructor(private db: Connection) {}
-								 saveHeroes() {
-										this.db.save();
-								 }
-							}
-							```
-							</script>
-						</section>
-						<section data-markdown>
-							<script type="text/template">
-							```
-							function awesomeSauce(dispatcher) {
-								dispatcher.trigger('awesome/sauce');
-							}
-							
-							function awesomeSauceListener(dispatcher) {
-								dispatcher.on('awesome/sauce', () => {
-									alert('awesome!');
-								});
-							}
-							```
-							</script>
-						</section>
-						<section>
-							<script type="text/template">
-							```
-							function awesomeSauce(dispatch) {
-								dispatch('awesome/sauce');
-							}
-							
-							function awesomeSauceListener(listen) {
-								listen('awesome/sauce', () => {
-									alert('awesome!');
-								});
-							}
-							```
-							</script>
-						</section>
+						}
+						```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						```
+						function awesomeSauce(dispatcher) {
+							dispatcher.trigger('awesome/sauce');
+						}
+						
+						function awesomeSauceListener(dispatcher) {
+							dispatcher.on('awesome/sauce', () => {
+								alert('awesome!');
+							});
+						}
+						```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						```
+						function awesomeSauce(dispatch) {
+							dispatch('awesome/sauce');
+						}
+						
+						function awesomeSauceListener(listen) {
+							listen('awesome/sauce', () => {
+								alert('awesome!');
+							});
+						}
+						```
+						</script>
 					</section>
 				</section>
 				<section>
@@ -734,9 +725,8 @@
 						</script>
 					</section>
 					<section>
-						<h5>Conditional rendering</h5>
+						<h5>Conditional rendering (if)</h5>
 						<div class="fragment" data-markdown>
-							<p>if</p>
 							<script type="text/template">
 							```
 							{
@@ -746,57 +736,67 @@
 							</script>
 						</div>
 					</section>
-					<section data-markdown>
-						<p>unless</p>
+					<section>
+						<h5>Conditional rendering (unless)</h5>
+						<div class="fragment" data-markdown>
 						<script type="text/template">
-						```
-						{
-							condition || <span>Rendered when `falsy`</span>;
-						}
-						```
-						</script>
+							```
+							{
+								condition || <span>Rendered when `falsy`</span>;
+							}
+							```
+							</script>
+						</div>
 					</section>
-					<section data-markdown>
-						<p>if-else</p>
-						<script type="text/template">
-						```
-						{
-							condition ? (
-								<span>Rendered when `truthy`</span>
-							) : (
-								<span>Rendered when `falsy`</span>
-							);
-						}
-						```
-						</script>
+					<section>
+						<h5>Conditional rendering (if-else)</h5>
+						<div class="fragment" data-markdown>
+							<script type="text/template">
+							```
+							{
+								condition ? (
+									<span>Rendered when `truthy`</span>
+								) : (
+									<span>Rendered when `falsy`</span>
+								);
+							}
+							```
+							</script>
+						</div>
 					</section>
-					<section data-markdown>
+					<section>
 						<h5>Functions as children</h5>
-						<script type="text/template">
-						```
-						<Width>{width => <div>window is {width}</div>}</Width>
-						```
-						</script>
+						<div class="fragment" data-markdown>
+							<script type="text/template">
+							```
+							<Width>{width => <div>window is {width}</div>}</Width>
+							```
+							</script>
+						</div>						
 					</section>	
-					<section data-markdown>
+					<section>
 						<h5>Proxy component</h5>
-						<script type="text/template">
-						```
-						<button type="button"></button>
+						<div class="fragment" data-markdown>
+							<script type="text/template">
+							```
+							<button type="button"></button>
 
-						const Button = props => <button type="button" {...props}>
-						```
-						</script>
+							const Button = props => <button type="button" {...props}>
+							```
+							</script>
+						</div>
 					</section>
-					<section data-markdown>
+					<section>
 						<h5>Event switch</h5>
-						<script type="text/template">
-						```
-						handleClick() { require("./actions/doStuff")() }
-						handleMouseEnter() { this.setState({ hovered: true }) }
-						handleMouseLeave() { this.setState({ hovered: false }) }					
-						```
-						</script>
+						<div class="fragment" data-markdown>
+							<script type="text/template">
+							```
+							handleClick() { require("./actions/doStuff")() }
+							handleMouseEnter() { this.setState({ hovered: true }) }
+							handleMouseLeave() { this.setState({ hovered: false }) }					
+							```
+							</script>
+						</div>
 					</section>		
 					<section data-markdown>
 						<script type="text/template">
@@ -821,38 +821,54 @@
 					<h2>Sources</h2>
 					<ul>
 						<li>
+								Agile Software Development, Principles, Patterns, and Practices by Robert C. Martin
+						</li>
+						<li>
+								Clean Architecture: A Craftsman's Guide to Software Structure and Design by Robert C. Martin
+						</li>
+						<li>
 							<a href="https://www.serendipidata.com/posts/react-design-patterns-container-view">
-								https://www.serendipidata.com
+								serendipidata.com
 							</a>
 						</li>
 						<li>
 							<a href="https://www.jondjones.com/frontend/react/components/four-reactjs-design-patterns-you-need-to-be-know-about">
-								https://www.jondjones.com
+								jondjones.com
 							</a>
 						</li>
 						<li>
 							<a href="https://www.slideshare.net/t.bak/design-patterns-in-react-152397149">
-								https://www.slideshare.net
+								slideshare.net
 							</a>
 						</li>
 						<li>
 							<a href="https://itnext.io/using-advanced-design-patterns-to-create-flexible-and-reusable-react-components-part-3-render-d7517dfe72bc">
-								https://itnext.io
+								itnext.io
 							</a>
 						</li>
 						<li>
 							<a href="https://reactpatterns.com">
-								https://reactpatterns.com
+								reactpatterns.com
 							</a>
 						</li>						
 						<li>
 							<a href="https://medium.com/swlh/micro-service-design-pattern-dependency-driven-decomposition-ddd-d2d28df2fedc">
-								https://medium.com/
+								medium.com
 							</a>
 						</li>
 						<li>
 							<a href="https://refactoring.guru/">
-								https://refactoring.guru/
+								refactoring.guru
+							</a>
+						</li>
+						<li>
+							<a href="https://thefullstack.xyz/solid-javascript">
+								thefullstack.xyz
+							</a>
+						</li>
+						<li>
+							<a href="https://codeforgeek.com/s-o-l-i-d-the-first-five-principles-of-object-oriented-design/">
+								codeforgeek.com
 							</a>
 						</li>
 					</ul>
